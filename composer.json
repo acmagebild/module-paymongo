@@ -1,6 +1,6 @@
 {
     "name": "magebild/module-paymongo",
-    "description": "Paymongo module integration",
+    "description": "Paymongo module integration for Magento",
     "require": {
         "php": "~7.0.0|~7.1.0|~7.2.0|~7.3.0",
         "magebild/module-base": "^1.0",
