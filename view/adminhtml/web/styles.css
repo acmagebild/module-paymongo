@@ -1,0 +1,5 @@
+.paymongo-section .paymongo-payment-logo {background: url("./images/logo.png")  no-repeat 0 0% / 18rem auto;
+    height: 32px; width: auto; padding-left: 20rem; display:inline-block; vertical-align: middle;}
+.paymongo-section .button-container {float: right;}
+.paymongo-section .paymongo-payment-text { display: inline-block; vertical-align: middle; width: 50%}
+.section-config.with-button.paymongo-section .config-heading .button-container { margin: 0}

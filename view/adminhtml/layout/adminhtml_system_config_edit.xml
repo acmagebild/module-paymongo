@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author MageBild Team
+ * @copyright Copyright (c) 2019 Magebild
+ * @package Magebild_Paymongo
+ */
+ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <css src="Magebild_Paymongo::styles.css"/>
+    </head>
+</page>

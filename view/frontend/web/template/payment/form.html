@@ -1,0 +1,70 @@
+<div class="payment-method" data-bind="css: {'_active': (getCode() == isChecked())}">
+    <div class="payment-method-title field choice">
+        <input type="radio"
+               name="payment[method]"
+               class="radio"
+               data-bind="attr: {'id': getCode()}, value: getCode(), checked: isChecked, click: selectPaymentMethod, visible: isRadioButtonVisible()"/>
+        <label class="label" data-bind="attr: {'for': getCode()}">
+            <span data-bind="text: getTitle()"></span>
+        </label>
+    </div>
+
+    <div class="payment-method-content">
+        <!-- ko foreach: getRegion('messages') -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+        <!--/ko-->
+
+        <div class="paymongo-ewallets-container">
+            <!-- ko foreach: { data: getEwallets(), as: 'method'} -->
+                <div data-bind="attr: {'class': 'ewallet paymongo_' + method}">
+                    <img data-bind="attr: { src: require.toUrl('Magebild_Paymongo/images/'+ method +'.png'), alt: method}, click: $parent.selectProvider">
+                    <div class="ewallet-method-name" data-bind="text: method.toUpperCase()"></div>
+                </div>
+            <!--/ko-->
+        </div>
+
+
+        <div class="payment-method-billing-address">
+            <!-- ko foreach: $parent.getRegion(getBillingAddressFormName()) -->
+            <!-- ko template: getTemplate() --><!-- /ko -->
+            <!--/ko-->
+        </div>
+        <div data-bind="text: console.log($parent)"></div>
+
+        <div class="actions-toolbar">
+            <div class="primary">
+                <button class="action primary checkout"
+                        type="submit"
+                        data-bind="
+                        click: continueToPaymonggo,
+                        attr: {title: $t('Place Order')}
+                        ">
+                    <span data-bind="i18n: 'Place Order'"></span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+<style>
+    .paymongo-ewallets-container{
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+    }
+    .paymongo-ewallets-container .ewallet{
+        margin:5px;
+    }
+    .paymongo-ewallets-container .ewallet .ewallet-method-name{
+        text-align: center;
+        font-weight: bold;
+    }
+    .paymongo-ewallets-container .ewallet.selected{
+        -webkit-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+        box-shadow: 0px 2px 14px 0px rgba(0,0,0,0.75);
+        border-radius: 5px;
+        padding: 5px;
+    }
+</style>

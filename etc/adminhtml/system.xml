@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author MageBild Team
+ * @copyright Copyright (c) 2019 Magebild
+ * @package MageBild_Paymongo
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="payment">
+            <group id="paymongo_section" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
+                <fieldset_css>complex paymongo-section</fieldset_css>
+                <comment><![CDATA[<div class="paymongo-payment-logo"></div><div class="paymongo-payment-text">Paymongo Payment Integration</div>]]></comment>
+                <frontend_model>Magento\Paypal\Block\Adminhtml\System\Config\Fieldset\Payment</frontend_model>
+                <group id="api" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0" translate="label">
+                    <label>API Configuration</label>
+                    <field id="public_key" sortOrder="20" translate="label" type="text" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Public Key</label>
+                        <config_path>paymongo/api/public_key</config_path>
+                    </field>
+                    <field id="secret_key" translate="label" type="obscure" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Secret Key</label>
+                        <backend_model>Magento\Config\Model\Config\Backend\Encrypted</backend_model>
+                        <config_path>paymongo/api/secret_key</config_path>
+                    </field>
+                    <field id="env" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Environment</label>
+                        <source_model>Magebild\Paymongo\Model\Config\Source\Env</source_model>
+                    </field>
+                </group>
+                <group id="ewallet" translate="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>E-wallets</label>
+                    <clone_fields>1</clone_fields>
+                    <clone_model>Magebild\Paymongo\Model\Config\Ewallet</clone_model>
+                    <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+                <group id="address" type="text" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0" translate="label">
+                    <label>Customer Data</label>
+                    <field id="use_billing_address" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Include customer billing address</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+                <group id="debug" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="0" translate="label">
+                    <label>Logging</label>
+                    <field id="enable" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Enable</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>
