@@ -31,6 +31,10 @@ Must have a Paymongo account public and secret keys.
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/acbild)
 
+# Support
+
+You may contact us at [acmagebild@gmail.com](mailto:acmagebild@gmail.com?cc=bildcampaigns@gmail.com)
+
 # License
 
 MIT © [Magebild](http://bildcampaigns.com/)
